@@ -72,7 +72,7 @@
                     }
                 }
 
-                // CHECK IF THE SETTINGS.JSON FILE EXISTS
+                // CHECK IF THE appearanceSettings.json FILE EXISTS
 
                 if (!File.Exists(appearanceSettingsPath))
                 {
