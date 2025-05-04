@@ -14,7 +14,7 @@ public class Printing
         try
         {
             
-            // SPLIT ARGS
+            // SPLIT ARGS AND GET THE STRING TO ECHO
             
             List<string> listArgs = tokens.ToList();
             listArgs.Remove(root);
