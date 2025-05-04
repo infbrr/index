@@ -5,10 +5,6 @@ using Newtonsoft.Json.Linq;
 using index.data;
 using index.shell;
 
-#pragma warning disable CS8600
-#pragma warning disable CS8602
-#pragma warning disable CA1416
-
 namespace index
 {
     public class Terminal
