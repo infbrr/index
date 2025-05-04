@@ -1,51 +1,52 @@
 using System;
 using System.Collections.Generic;
 
-namespace index.shell;
-
-public class Printing
+namespace index.shell
 {
-    // ECHO COMMAND || SYNTAX: ECHO STRING
-    
-    public static void Echo(string root, string command, string[] tokens)
+    public class Printing
     {
-        try
+        // ECHO COMMAND || SYNTAX: ECHO STRING
+    
+        public static void Echo(string root, string command, string[] tokens)
         {
-            
-            // SPLIT ARGS AND GET THE STRING TO ECHO
-            
-            List<string> listArgs = tokens.ToList();
-            listArgs.Remove(root);
-
-            string args = string.Join(" ", listArgs);
-            
-            // CHECK FOR INVALID ARGS
-            
             try
             {
-                if (string.IsNullOrEmpty(args) || String.IsNullOrWhiteSpace(args))
+            
+                // SPLIT ARGS AND GET THE STRING TO ECHO
+            
+                List<string> listArgs = tokens.ToList();
+                listArgs.Remove(root);
+
+                string args = string.Join(" ", listArgs);
+            
+                // CHECK FOR INVALID ARGS
+            
+                try
                 {
-                    Console.WriteLine("[ WARNING ] THE COMMAND ECHO RECIVED NO ARGUMENTS || COMMAND SYNTAX : ECHO STRING");
+                    if (string.IsNullOrEmpty(args) || String.IsNullOrWhiteSpace(args))
+                    {
+                        Console.WriteLine("[ WARNING ] THE COMMAND ECHO RECIVED NO ARGUMENTS || COMMAND SYNTAX : ECHO STRING");
+                    }
                 }
-            }
             
-            // SEPERATE TRY-CATCH TO GET SPECIFIC ERRORS
+                // SEPERATE TRY-CATCH TO GET SPECIFIC ERRORS
 
-            catch (Exception ex)
-            {
-                Console.WriteLine("[ WARNING ] THE COMMAND ECHO RECIVED NO ARGUMENTS || COMMAND SYNTAX : ECHO STRING"); 
+                catch (Exception ex)
+                {
+                    Console.WriteLine("[ WARNING ] THE COMMAND ECHO RECIVED NO ARGUMENTS || COMMAND SYNTAX : ECHO STRING"); 
+                }
+            
+                // PRINT THE ARGS GIVEN IN THE ECHO COMMAND
+            
+                Console.WriteLine(args);
             }
-            
-            // PRINT THE ARGS GIVEN IN THE ECHO COMMAND
-            
-            Console.WriteLine(args);
-        }
         
-        // ERROR HANDLING TO CHECK FOR AN INVALID ROOT
+            // ERROR HANDLING TO CHECK FOR AN INVALID ROOT
 
-        catch (IndexOutOfRangeException ex)
-        {
-            Console.WriteLine("[ WARNING ] THE COMMAND ECHO RECIVED AN INVALID OR NULL ROOT");
+            catch (IndexOutOfRangeException ex)
+            {
+                Console.WriteLine("[ WARNING ] THE COMMAND ECHO RECIVED AN INVALID OR NULL ROOT");
+            }
         }
     }
 }
