@@ -74,22 +74,24 @@ namespace index
             while (true)
             {
                 Console.Write(TerminalInterface);
-                
-                string command = Console.ReadLine();
+
+                string command = Console.ReadLine().Trim();
                 
                 Console.WriteLine("");
-                
+
                 string[] tokens = command.Split();
+
 
                 try
                 {
                     root = tokens[0];
                 }
 
-                catch (IndexOutOfRangeException ex)
+                catch (IndexOutOfRangeException)
                 {
                     Console.WriteLine(" [ WARNING ] INVALID COMMAND : NO COMMAND ROOT FOUND");
                 }
+                
 
                 if (root.Trim().ToLower() == "echo")
                 {

@@ -13,15 +13,16 @@ public class Printing
     {
         try
         {
-            // CHECK FOR INVALID ARGUMENTS : IF THE 2ND TOKEN IS NULL OR EMPTY THEN WE HAVE INVALID ARGS
             
-            List<string> tokensList = tokens.ToList();
+            // SPLIT ARGS
             
-            tokensList.Remove(root);
-            
-            string args = string.Join(" ", tokensList);
-            
+            List<string> listArgs = tokens.ToList();
+            listArgs.Remove(root);
 
+            string args = string.Join(" ", listArgs);
+            
+            // CHECK FOR INVALID ARGS
+            
             try
             {
                 if (string.IsNullOrEmpty(args) || String.IsNullOrWhiteSpace(args))
@@ -32,7 +33,7 @@ public class Printing
             
             // SEPERATE TRY-CATCH TO GET SPECIFIC ERRORS
 
-            catch (IndexOutOfRangeException ex)
+            catch (Exception ex)
             {
                 Console.WriteLine("[ WARNING ] THE COMMAND ECHO RECIVED NO ARGUMENTS || COMMAND SYNTAX : ECHO STRING"); 
             }
