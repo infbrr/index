@@ -155,8 +155,6 @@ using Newtonsoft.Json.Linq;
 
                             Console.ResetColor();
 
-                            File.WriteAllText(appearanceSettingsPath, "");
-
                             var settings = new AppearanceSettings
                             {
                                 ForegroundColor = "orange",
