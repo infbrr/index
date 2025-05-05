@@ -15,6 +15,7 @@ namespace index
         public static string ForegroundColor = "orange";
         public static string AppearanceSettingsJson = string.Empty;
         public static string CurrentDirectory = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+        
         static void Main()
         {
             
