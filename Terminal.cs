@@ -99,6 +99,10 @@ namespace index
                 {
                     shell.Directory.cdset(root, command, tokens);
                 }
+                else if (root.Trim().ToLower() == "exit")
+                {
+                    Environment.Exit(0);
+                }
                 else
                 {
                     Console.WriteLine("[ WARNING ] INVALID COMMAND");
