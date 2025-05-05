@@ -179,10 +179,6 @@ using Newtonsoft.Json.Linq;
 
                         Console.ResetColor();
                         
-                        // RESET THE FILEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-
-                        File.WriteAllText(appearanceSettingsPath, "");
-                        
                         // RESET THE SETTINGS TO DEFAULT
 
                         var defaultAppearanceSettings = new AppearanceSettings
